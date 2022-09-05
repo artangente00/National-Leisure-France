@@ -31,16 +31,42 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<main class="site-main" id="main">
 
 				<?php
-				while ( have_posts() ) {
-					the_post();
-					get_template_part( 'loop-templates/content', 'page' );
+				//while ( have_posts() ) {
+					//the_post();
+					//get_template_part( 'loop-templates/content', 'page' );
 
 					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) {
+					//if ( comments_open() || get_comments_number() ) {
 						comments_template();
-					}
-				}
+					//}
+				//}
+				$logo = get_field('header_logo');
+				echo $logo;
 				?>
+
+				<div class="row">
+				<h1>
+				<?php
+				$title = get_field('header_title');
+				echo $title;?>
+				</h1>
+				</div>
+
+				<div class="row">
+
+				<?php
+				$description = get_field('header_description');
+				echo $description;?>
+				
+				</div>
+				
+				<div class="row">
+
+				<?php
+				$button = get_field('button1');
+				echo $button;?>
+				
+				</div>
 
 			</main><!-- #main -->
 
