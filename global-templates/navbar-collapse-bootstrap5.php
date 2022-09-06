@@ -11,7 +11,8 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-primary" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar navbar-expand-md navbar-light" aria-labelledby="main-nav-label" style="border:1px solid black; position: fixed; width:100vw; --bs-bg-opacity: 1;
+    background-color: rgba(0,0,0,0)!important; color: black!important">
 
 	<h2 id="main-nav-label" class="screen-reader-text">
 		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
@@ -36,7 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php
 		} else {
 			the_custom_logo();
-		}
+			}
 		?>
 		<!-- end custom logo -->
 
