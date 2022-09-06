@@ -19,14 +19,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 ?>
 
-<div class="wrapper" id="page-wrapper">
+<div class="wrapper" id="page-wrapper" style="height:1000px; border:1px solid black">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
 
 			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
+			<!-- <php get_template_part( 'global-templates/left-sidebar-check' ); ?> -->
 
 			<main class="site-main" id="main">
 
@@ -71,7 +71,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</main><!-- #main -->
 
 			<!-- Do the right sidebar check -->
-			<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
+			<!-- <php get_template_part( 'global-templates/right-sidebar-check' ); ?> -->
 
 		</div><!-- .row -->
 
