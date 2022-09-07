@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-$container = get_theme_mod( 'understrap_container_type' );
+//$container = get_theme_mod( 'understrap_container_type' );
 
 ?>
 
@@ -24,7 +24,47 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
-
+		<div class="col-6">
+			
+						<div class="row">
+							<img src="url('http://localhost/wordpress/wp-content/uploads/2022/09/logo.png'); width:46px; height:177">
+						</div>
+						<div class="row">
+							<p style="color:#003E67; font-family:Arial; font-size: 65px; line-height:62px; letter-spacing:-3%; font-style:bold; margin-left:30px;">
+							<?php
+							$title = get_field('header_title');
+							echo $title;?>
+							</p>
+						</div>
+						<div class="row">
+							<p style="color:#00A4D6; font-family:Arial; font-size: 65px; line-height:62px; letter-spacing:-3%; font-style:Mixed; margin-left:30px;">
+							<?php
+							$title2 = get_field('header_description2');
+							echo $title2;?>
+							</p>
+						</div>
+						<div class="row">
+							<p style="color:#003E67; font-family:Arial; font-size: 18px; line-height:20px; letter-spacing:0px; font-style:Mixed; margin-left:30px;">
+							<?php
+							$description = get_field('header_description');
+							echo $description;?>
+							</p>
+						</div>
+						<div class="row">
+							<?php
+							$button = get_field('button1');
+							echo $button;?>
+						</div>
+					</div>
+				
+					<div class="col-6" style="background-image:url('http://localhost/wordpress/wp-content/uploads/2022/09/image.png'); background-position: center;background-repeat: no-repeat;background-size: cover; height:800px;width:1000;">
+						
+						<div class="row">
+						</div>
+					</div>
+			<!-- <php -->
+							<!-- $image = get_field('image'); -->
+							<!-- echo $image;> -->
 			<!-- Do the left sidebar check -->
 			<!-- <php get_template_part( 'global-templates/left-sidebar-check' ); ?> -->
 
@@ -40,34 +80,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 						comments_template();
 					//}
 				//}
-				$logo = get_field('header_logo');
-				echo $logo;
+				
 				?>
 
-				<div class="row">
-				<h1>
-				<?php
-				$title = get_field('header_title');
-				echo $title;?>
-				</h1>
-				</div>
-
-				<div class="row">
-
-				<?php
-				$description = get_field('header_description');
-				echo $description;?>
-				
-				</div>
-				
-				<div class="row">
-
-				<?php
-				$button = get_field('button1');
-				echo $button;?>
-				
-				</div>
-
+					
 			</main><!-- #main -->
 
 			<!-- Do the right sidebar check -->
