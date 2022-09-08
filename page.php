@@ -23,7 +23,30 @@ get_header();
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
-		<div class="row">
+		<?php if( have_rows('content') ):?>
+			
+			<?php while( have_rows('content') ): the_row();?>
+
+				<?php if (get_row_layout() == 'column_section'):
+					
+					$columns = get_sub_field('columns');
+
+				?>	
+					<?php foreach($columns as $column):?>
+						
+						<p style="color:#003E67; font-family:Arial; font-size: 65px; line-height:62px; letter-spacing:-3%; font-style:bold; margin-left:30px;">
+							<?php echo $columns['title'];?>
+						</p>
+					<?php endforeach;?>
+
+
+				<?php endif;?>
+
+			<?php endwhile;?>
+
+		<?php endif;?>
+
+		<!-- <div class="row">
 		<div class="col-6">
 			
 						<div class="row">
@@ -31,44 +54,44 @@ get_header();
 						</div>
 						<div class="row">
 							<p style="color:#003E67; font-family:Arial; font-size: 65px; line-height:62px; letter-spacing:-3%; font-style:bold; margin-left:30px;">
-							<?php
+							php
 							$title = get_field('header_title');
 							echo $title;?>
 							</p>
 						</div>
 						<div class="row">
 							<p style="color:#00A4D6; font-family:Arial; font-size: 65px; line-height:62px; letter-spacing:-3%; font-style:Mixed; margin-left:30px;">
-							<?php
+							<-- php
 							$title2 = get_field('header_description2');
-							echo $title2;?>
-							</p>
-						</div>
+							echo $title2;?> -->
+							<!-- </p> -->
+						<!-- </div>
 						<div class="row">
 							<p style="color:#003E67; font-family:Arial; font-size: 18px; line-height:20px; letter-spacing:0px; font-style:Mixed; margin-left:30px;">
-							<?php
+							<-- php
 							$description = get_field('header_description');
-							echo $description;?>
-							</p>
-						</div>
+							echo $description;?> -->
+							<!-- </p> -->
+						<!-- </div>
 						<div class="row">
-							<?php
+							<-- php
 							$button = get_field('button1');
-							echo $button;?>
-						</div>
+							echo $button;--> 
+						<!-- </div>
 					</div>
 				
 					<div class="col-6" style="background-image:url('http://localhost/wordpress/wp-content/uploads/2022/09/image.png'); background-position: center;background-repeat: no-repeat;background-size: cover; height:800px;width:1000;">
 						
 						<div class="row">
 						</div>
-					</div>
+					</div> --> 
 			<!-- <php -->
 							<!-- $image = get_field('image'); -->
 							<!-- echo $image;> -->
 			<!-- Do the left sidebar check -->
 			<!-- <php get_template_part( 'global-templates/left-sidebar-check' ); ?> -->
 
-			<main class="site-main" id="main">
+			<!-- <main class="site-main" id="main"> -->
 
 				<?php
 				//while ( have_posts() ) {
@@ -84,12 +107,12 @@ get_header();
 				?>
 
 					
-			</main><!-- #main -->
+			<!-- </main>#main -->
 
 			<!-- Do the right sidebar check -->
 			<!-- <php get_template_part( 'global-templates/right-sidebar-check' ); ?> -->
 
-		</div><!-- .row -->
+		<!-- </div>.row -->
 
 	</div><!-- #content -->
 
